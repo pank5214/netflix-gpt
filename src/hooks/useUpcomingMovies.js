@@ -13,7 +13,7 @@ const useUpcomingMovies = () => {
     );
 
     const json = await data.json();
-    console.log(json);
+
     dispatch(addUpcomingMovies(json.results));
   };
 

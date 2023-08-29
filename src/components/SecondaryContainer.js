@@ -22,19 +22,3 @@ const SecondaryContainer = () => {
 };
 
 export default SecondaryContainer;
-
-// eslint-disable-next-line no-lone-blocks
-{
-  /**
-   *
-   * MovieList - Popular
-   *      - MoviesCard * n
-   * MovieList - Now Playing
-   *     - MoviesCard * n
-   * MovieList - Trending
-   *      - MoviesCard * n
-   * MovieList - Documentary
-   *      - MoviesCard * n
-   *
-   */
-}
