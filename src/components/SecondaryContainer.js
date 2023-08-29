@@ -1,7 +1,40 @@
 import React from "react";
+import MovieList from "./MovieList";
+import { useSelector } from "react-redux";
 
 const SecondaryContainer = () => {
-  return <div>SecondaryContainer</div>;
+  const movies = useSelector((store) => store.movies);
+
+  return (
+    movies && (
+      <div className="bg-black">
+        <div className="-mt-48 relative z-10 pl-8">
+          <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
+          <MovieList title={"Top Rated"} movies={movies.topRatedMovies} />
+          <MovieList title={"Popular"} movies={movies.popularMovies} />
+          <MovieList title={"Documentary"} movies={movies.topRatedMovies} />
+          <MovieList title={"Upcoming"} movies={movies.upcomingMovies} />
+          <MovieList title={"Thriller"} movies={movies.nowPlayingMovies} />
+        </div>
+      </div>
+    )
+  );
 };
 
 export default SecondaryContainer;
+
+// eslint-disable-next-line no-lone-blocks
+{
+  /**
+   *
+   * MovieList - Popular
+   *      - MoviesCard * n
+   * MovieList - Now Playing
+   *     - MoviesCard * n
+   * MovieList - Trending
+   *      - MoviesCard * n
+   * MovieList - Documentary
+   *      - MoviesCard * n
+   *
+   */
+}
