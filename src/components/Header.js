@@ -66,7 +66,7 @@ const Header = () => {
         <div className="flex justify-between">
           {showGptSearch && (
             <select
-              className="m-6 p-2 px-3 bg-red-600 text-white text-sm rounded-lg"
+              className="my-6 p-2 px-3 bg-red-600 text-white text-sm rounded-lg"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -78,13 +78,13 @@ const Header = () => {
           )}
 
           <button
-            className="bg-blue-600 text-white my-6 mx-2 px-2 py-1 rounded-lg hover:bg-blue-700"
+            className="bg-blue-600 text-white my-6 mx-2 px-2 md:py-1 rounded-lg hover:bg-blue-700"
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "Home Page" : "GPT Search"}
           </button>
           <img
-            className="w-8 md:w-12 h-7 md:h-12 mt-7 md:mt-5 ml-28 "
+            className="w-8 md:w-12 h-7 md:h-12 mt-7 md:mt-5 md:ml-28 hidden md:block"
             alt="user-icon"
             src={user?.photoURL}
           />
