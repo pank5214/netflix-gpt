@@ -6,11 +6,17 @@ import { BACKGROUND_POSTER } from "../utils/constants";
 const GptSearchPage = () => {
   return (
     <div>
-        <div className="fixed -z-10">
-        <img src={BACKGROUND_POSTER} alt="background-Poster" />
+      <div className="fixed -z-10">
+        <img
+          className="h-screen object-cover md:h-full"
+          src={BACKGROUND_POSTER}
+          alt="background-Poster"
+        />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
     </div>
   );
 };

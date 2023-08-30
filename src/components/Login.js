@@ -87,14 +87,14 @@ const Login = () => {
       <Header />
 
       <div className="absolute">
-        <img src={BACKGROUND_POSTER} alt="background-Poster" />
-      </div>
+        <img className="fixed h-screen object-cover md:w-screen" src={BACKGROUND_POSTER} alt="background-Poster" />
+      </div> 
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-[28%] absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg opacity-80"
+        className="w-[80%] md:w-[28%] absolute p-4 md:p-8 bg-black my-20 md:my-36 mx-auto right-0 left-0 text-white rounded-lg opacity-80"
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-3xl md:py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -111,7 +111,7 @@ const Login = () => {
           ref={email}
           type="text"
           placeholder="Email Address"
-          className="p-4 my-4 w-full bg-gray-700 rounded-md"
+          className="p-4 md:my-4 w-full bg-gray-700 rounded-md"
         />
 
         <input
