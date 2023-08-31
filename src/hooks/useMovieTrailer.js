@@ -4,6 +4,8 @@ import { API_OPTIONS } from "../utils/constants";
 import { addTrailerVideo } from "../utils/moviesSlice";
 
 const useMovieTrailer = (movieId) => {
+  
+  console.log("movieId",movieId)
   const dispatch = useDispatch();
 
   const trailerVideo = useSelector((store) => store.movies.trailerVideo);
@@ -19,7 +21,11 @@ const useMovieTrailer = (movieId) => {
     );
     const json = await data.json();
 
+    console.log(json.results);
+
     const filterdata = json.results.filter((video) => video.type === "Trailer");
+
+    console.log("filterdata:", filterdata);
 
     const trailer = filterdata.length ? filterdata[0] : json.results[0];
 
