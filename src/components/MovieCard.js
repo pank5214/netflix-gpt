@@ -4,7 +4,7 @@ import { IMG_CDN_URL } from "../utils/constants";
 const MovieCard = ({ posterPath }) => {
   if (!posterPath) return null;
   return (
-    <div className="w-36 md:w-48 pr-3 hover:cursor-progress">
+    <div className="w-36 md:w-48 pr-3 hover:cursor-pointer">
       <img src={IMG_CDN_URL + posterPath} alt="Movie Card" />
     </div>
   );

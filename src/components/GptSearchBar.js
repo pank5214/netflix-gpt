@@ -10,7 +10,6 @@ const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
 
-  // Search Movie in TMDB
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
@@ -25,7 +24,6 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
     // Make an API Call to GPT API and get Movies Results
 
     const gptQuery =
@@ -42,8 +40,6 @@ const GptSearchBar = () => {
       // TODO: Write Error Handling
     }
 
-    console.log(gptResults.choices?.[0]?.message?.content);
-
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
 
     // For each movie I will search TMDB API
@@ -51,7 +47,6 @@ const GptSearchBar = () => {
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
 
     const tmdbResults = await Promise.all(promiseArray);
-    console.log(tmdbResults);
 
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })

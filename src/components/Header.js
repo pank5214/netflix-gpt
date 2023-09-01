@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <div className="absolute w-[100%] md:w-screen px-2 md:px-6 py-1 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row md:justify-between">
       <img
-        className="w-44 -mb-8 md:mb-4 md:mx-0 flex self-center"
+        className="w-44 -mb-8 md:mb-4 md:mx-0 flex self-center hover:cursor-pointer"
         src={LOGO}
         alt="logo"
       />

@@ -13,7 +13,7 @@ const GptSearchPage = () => {
           alt="background-Poster"
         />
       </div>
-      <div className="">
+      <div>
         <GptSearchBar />
         <GptMovieSuggestions />
       </div>
