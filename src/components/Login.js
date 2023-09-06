@@ -87,54 +87,60 @@ const Login = () => {
       <Header />
 
       <div className="absolute">
-        <img className="fixed h-screen object-cover md:w-screen" src={BACKGROUND_POSTER} alt="background-Poster" />
-      </div> 
+        <img
+          className="fixed h-screen object-cover md:w-screen"
+          src={BACKGROUND_POSTER}
+          alt="background-Poster"
+        />
+      </div>
 
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="w-[80%] md:w-[28%] absolute p-4 md:p-8 bg-black my-20 md:my-36 mx-auto right-0 left-0 text-white rounded-lg opacity-80"
-      >
-        <h1 className="font-bold text-3xl md:py-4">
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </h1>
+      <div className="flex flex-col items-center pt-20 md:p-0">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="w-[80%] md:w-[30%] absolute p-8 bg-black my-20 md:my-36 mx-auto right-0 left-0 text-white rounded-lg opacity-80"
+        >
+          <h1 className="font-bold text-3xl py-4">
+            {isSignInForm ? "Sign In" : "Sign Up"}
+          </h1>
 
-        {!isSignInForm && (
+          {!isSignInForm && (
+            <input
+              ref={name}
+              type="text"
+              placeholder="Full Name"
+              className="p-4 my-4 w-full bg-gray-700 rounded-md"
+            />
+          )}
+
           <input
-            ref={name}
+            ref={email}
             type="text"
-            placeholder="Full Name"
+            placeholder="Email Address"
+            className="p-4 md:my-4 w-full bg-gray-700 rounded-md"
+          />
+
+          <input
+            ref={password}
+            type="password"
+            placeholder="Password"
             className="p-4 my-4 w-full bg-gray-700 rounded-md"
           />
-        )}
+          <p className="font-bold text-sm text-red-600">{errorMessage}</p>
 
-        <input
-          ref={email}
-          type="text"
-          placeholder="Email Address"
-          className="p-4 md:my-4 w-full bg-gray-700 rounded-md"
-        />
+          <button
+            className="p-4 mt-8 w-full bg-red-700 rounded-md"
+            onClick={handleButtonClick}
+          >
+            {isSignInForm ? "Sign In" : "Sign Up"}
+          </button>
 
-        <input
-          ref={password}
-          type="password"
-          placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700 rounded-md"
-        />
-        <p className="font-bold text-sm text-red-600">{errorMessage}</p>
-
-        <button
-          className="p-4 mt-8 w-full bg-red-700 rounded-md"
-          onClick={handleButtonClick}
-        >
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </button>
-
-        <p className="py-4 mt-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignInForm
-            ? "New to Netflix? Sign up now."
-            : "Already Registered? Sign In Now."}
-        </p>
-      </form>
+          <p className="py-4 mt-4 cursor-pointer" onClick={toggleSignInForm}>
+            {isSignInForm
+              ? "New to Netflix? Sign up now."
+              : "Already Registered? Sign In Now."}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
